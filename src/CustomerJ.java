@@ -1,15 +1,19 @@
 public class CustomerJ {
-    private final String fullname;
+    private final String name;
+    private final String address;
 
-    public CustomerJ(String forename, String initial, String surname) {
-        if (initial != null && !initial.isEmpty()) {
-            this.fullname = String.format("%s %s. %s", forename, initial, surname);
-        } else {
-            this.fullname = String.format("%s %s", forename, surname);
-        }
+    private String id;
+
+    public CustomerJ(String name, String address) {
+        this.name = name;
+        this.address = address;
     }
 
-    public CustomerJ(String forename, String surname) {
-        this(forename, "", surname);
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public static void main(String... args) {
+        CustomerJ eric = new CustomerJ("Eric", "29 Acacia Road");
     }
 }
